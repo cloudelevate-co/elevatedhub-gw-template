@@ -4,10 +4,12 @@ import {
   Autocomplete,
   Group,
   Burger,
+  Box,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconSearch } from "@tabler/icons";
 import { MantineLogo } from "@mantine/ds";
+import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -20,6 +22,8 @@ const useStyles = createStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    paddingTop: 12,
+    paddingBottom: 12,
   },
 
   links: {
@@ -65,14 +69,13 @@ export function HeaderSearch({ links }: HeaderSearchProps) {
   const { classes } = useStyles();
 
   const items = links.map((link) => (
-    <a
+    <Link
       key={link.label}
       href={link.link}
-      className={classes.link}
       onClick={(event) => event.preventDefault()}
     >
-      {link.label}
-    </a>
+      <Box className={classes.link}>{link.label}</Box>
+    </Link>
   ));
 
   return (

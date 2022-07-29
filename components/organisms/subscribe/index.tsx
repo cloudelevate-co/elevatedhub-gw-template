@@ -1,28 +1,36 @@
-import { createStyles, Text, Title, TextInput, Button, Image } from '@mantine/core';
-
+import {
+  createStyles,
+  Text,
+  Title,
+  TextInput,
+  Button,
+  Image,
+  Container,
+} from "@mantine/core";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
-    display: 'flex',
-    alignItems: 'center',
+    display: "flex",
+    alignItems: "center",
     padding: theme.spacing.xl * 2,
     borderRadius: theme.radius.md,
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
+    backgroundColor:
+      theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.white,
     border: `1px solid ${
-      theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[3]
+      theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.colors.gray[3]
     }`,
 
     [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-      flexDirection: 'column-reverse',
+      flexDirection: "column-reverse",
       padding: theme.spacing.xl,
     },
   },
 
   image: {
-    maxWidth: '40%',
+    maxWidth: "40%",
 
     [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-      maxWidth: '100%',
+      maxWidth: "100%",
     },
   },
 
@@ -36,20 +44,20 @@ const useStyles = createStyles((theme) => ({
   },
 
   title: {
-    color: theme.colorScheme === 'dark' ? theme.white : theme.black,
+    color: theme.colorScheme === "dark" ? theme.white : theme.black,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     lineHeight: 1,
     marginBottom: theme.spacing.md,
   },
 
   controls: {
-    display: 'flex',
+    display: "flex",
     marginTop: theme.spacing.xl,
   },
 
   inputWrapper: {
-    width: '100%',
-    flex: '1',
+    width: "100%",
+    flex: "1",
   },
 
   input: {
@@ -67,26 +75,33 @@ const useStyles = createStyles((theme) => ({
 export function EmailBanner() {
   const { classes } = useStyles();
   return (
-    <div className={classes.wrapper}>
-      <div className={classes.body}>
-        <Title className={classes.title}>Wait a minute...</Title>
-        <Text weight={500} size="lg" mb={5}>
-          Subscribe to our newsletter!
-        </Text>
-        <Text size="sm" color="dimmed">
-          You will never miss important product updates, latest news and community QA sessions. Our
-          newsletter is once a week, every Sunday.
-        </Text>
+    <Container size="lg" mb={42}>
+      <div className={classes.wrapper}>
+        <div className={classes.body}>
+          <Title className={classes.title}>Wait a minute...</Title>
+          <Text weight={500} size="lg" mb={5}>
+            Subscribe to our newsletter!
+          </Text>
+          <Text size="sm" color="dimmed">
+            You will never miss important product updates, latest news and
+            community QA sessions. Our newsletter is once a week, every Sunday.
+          </Text>
 
-        <div className={classes.controls}>
-          <TextInput
-            placeholder="Your email"
-            classNames={{ input: classes.input, root: classes.inputWrapper }}
-          />
-          <Button className={classes.control}>Subscribe</Button>
+          <div className={classes.controls}>
+            <TextInput
+              placeholder="Your email"
+              classNames={{ input: classes.input, root: classes.inputWrapper }}
+            />
+            <Button className={classes.control}>Subscribe</Button>
+          </div>
         </div>
+        <Image
+          src={
+            "https://cdni.iconscout.com/illustration/premium/thumb/like-share-and-subscribe-4658633-3865287.png"
+          }
+          className={classes.image}
+        />
       </div>
-      <Image src={"https://cdni.iconscout.com/illustration/premium/thumb/like-share-and-subscribe-4658633-3865287.png"} className={classes.image} />
-    </div>
+    </Container>
   );
 }
