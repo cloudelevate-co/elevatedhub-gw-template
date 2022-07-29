@@ -1,9 +1,9 @@
 import { Box, Group, Text, Stack, Title, Container } from "@mantine/core";
-import { OrgBlogMain } from "../components/organisms/blog/main";
+import { GetServerSideProps } from "next";
 import { FooterLinks } from "../components/organisms/footer";
 import { HeaderSearch } from "../components/organisms/header/index";
 import { EmailBanner } from "../components/organisms/subscribe/index";
-import { FooterIcons, HeaderLinks, LiveEventData } from "../data/index";
+import { FooterIcons, HeaderLinks } from "../data/index";
 
 export default function Screen() {
   return (
@@ -33,12 +33,15 @@ export default function Screen() {
           </Group>
         </Box>
 
-        <Box my="42px">
-
-        </Box>
+        <Box my="42px"></Box>
       </Container>
       <EmailBanner />
       <FooterLinks data={FooterIcons} />
     </div>
   );
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  console.log(context.req.method,"resolved")
+  return {props:{}}
 }

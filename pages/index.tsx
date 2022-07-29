@@ -1,4 +1,5 @@
 import { Button, Container, Stack } from "@mantine/core";
+import { GetServerSideProps } from "next";
 import { OrgBlog } from "../components/organisms/blog/index";
 import { FaqWithBg } from "../components/organisms/faq";
 import { FooterLinks } from "../components/organisms/footer";
@@ -8,7 +9,8 @@ import { LiveEventBanner } from "../components/organisms/live/live-event";
 import { EmailBanner } from "../components/organisms/subscribe/index";
 import { FooterIcons, HeaderLinks, LiveEventData } from "../data/index";
 
-export default function Screen() {
+export default function Screen({ data }) {
+  console.log(data);
   return (
     <div>
       <HeaderSearch links={HeaderLinks} />
@@ -27,3 +29,9 @@ export default function Screen() {
     </div>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  console.log(context.req.headers["host"], "resolved");
+  const url = context.req.headers["host"];
+  return { props: { data: { url } } };
+};

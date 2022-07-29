@@ -1,4 +1,5 @@
 import { Button, Container, Pagination, Stack } from "@mantine/core";
+import { GetServerSideProps } from "next";
 import { OrgBlog } from "../components/organisms/blog/index";
 import { OrgBlogMain } from "../components/organisms/blog/main";
 import { FooterLinks } from "../components/organisms/footer";
@@ -29,4 +30,10 @@ export default function Screen() {
       <FooterLinks data={FooterIcons} />
     </div>
   );
+}
+
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  console.log(context.req.method,"resolved")
+  return {props:{}}
 }
