@@ -1,4 +1,4 @@
-import { Box, Button, Card, Stack, Title, Text, Image} from "@mantine/core";
+import { Box, Button, Card, Stack, Title, Text, Image } from "@mantine/core";
 
 export const SermonCard = () => {
   return (
