@@ -67,15 +67,15 @@ export const FooterIcons = [
 export const HeaderLinks = [
   {
     link: "/about",
-    label: "Features",
+    label: "About",
   },
   {
-    link: "/pricing",
-    label: "Pricing",
+    link: "/media",
+    label: "Media",
   },
   {
-    link: "/learn",
-    label: "Learn",
+    link: "/blog",
+    label: "Blog",
   },
   {
     link: "/community",
