@@ -13,6 +13,8 @@ import { PublicApi, TOrgHomeData } from "../sdk/api";
 
 export default function Screen({ data }) {
 
+  console.log(data.url);
+
   let home: TOrgHomeData = data.home;
   console.log(home);
 
@@ -41,6 +43,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   let api = new PublicApi()
   let data = await api.siteControllerGetStoreHomeData(url)
+
 
   return { props: { data: { url, home: data.data } } };
 };
