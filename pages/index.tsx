@@ -1,5 +1,6 @@
 import { Button, Container, Stack } from "@mantine/core";
 import { GetServerSideProps } from "next";
+import { AxiosResponse } from "axios"
 import { OrgBlog } from "../components/organisms/blog/index";
 import { FaqWithBg } from "../components/organisms/faq";
 import { FooterLinks } from "../components/organisms/footer";
@@ -8,9 +9,13 @@ import { HeroImageRight } from "../components/organisms/hero";
 import { LiveEventBanner } from "../components/organisms/live/live-event";
 import { EmailBanner } from "../components/organisms/subscribe/index";
 import { FooterIcons, HeaderLinks, LiveEventData } from "../data/index";
+import { PublicApi, TOrgHomeData } from "../sdk/api";
 
 export default function Screen({ data }) {
-  console.log(data);
+
+  let home: TOrgHomeData = data.home;
+  console.log(home);
+
   return (
     <div>
       <HeaderSearch links={HeaderLinks} />
@@ -21,7 +26,7 @@ export default function Screen({ data }) {
         </Stack>
       </Container>
       <Stack spacing={"lg"} justify="stretch"></Stack>
-      <OrgBlog />
+      <OrgBlog posts={home.posts ?? []} />
       <FaqWithBg />
       <Container size={"lg"}>{/* <ContactIcons /> */}</Container>
       <EmailBanner />
@@ -33,5 +38,9 @@ export default function Screen({ data }) {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   console.log(context.req.headers["host"], "resolved");
   const url = context.req.headers["host"];
-  return { props: { data: { url } } };
+
+  let api = new PublicApi()
+  let data = await api.siteControllerGetStoreHomeData(url)
+
+  return { props: { data: { url, home: data.data } } };
 };

@@ -11,8 +11,10 @@ import {
   Button,
   Group,
 } from "@mantine/core";
+import { Post } from "../../../sdk/api";
+import { ArticleCard } from "../card/article-card";
 
-export const OrgBlog = () => {
+export const OrgBlog = ({ posts }: { posts?: Post[] }) => {
   return (
     <Box>
       <Container size="lg" my={"64px"}>
@@ -26,38 +28,10 @@ export const OrgBlog = () => {
           </Box>
         </Group>
         <Grid mt={"24px"} gutter="lg">
-          {[1, 2, 3, 4, 5, 6].map((v) => {
+          {posts.map((v) => {
             return (
               <Grid.Col md={4}>
-                <Card shadow={"md"}>
-                  <Card.Section>
-                    <Image src="https://media.istockphoto.com/photos/every-time-you-open-a-book-you-learn-something-picture-id1182489122?b=1&k=20&m=1182489122&s=170667a&w=0&h=OUPs_giwFPXLNDzj-9ZZEKswO0ydMvtPKNFph4AX6JE=" />
-                  </Card.Section>
-
-                  <Card.Section sx={{ padding: 18 }}>
-                    <Stack>
-                      <Box>
-                        <Title sx={{ fontSize: 16 }}>
-                          Article title goes here
-                        </Title>
-                        <Box>
-                          {" "}
-                          <small>{new Date().toDateString()}</small>
-                        </Box>
-                      </Box>
-                      <Text>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Alias dolorem, consequuntur, eius nobis autem natus
-                        nostrum necessitatibus.
-                      </Text>
-                      <Box>
-                        <Button gradient={{ from: "blue", to: "orange" }}>
-                          Read
-                        </Button>
-                      </Box>
-                    </Stack>
-                  </Card.Section>
-                </Card>
+                <ArticleCard post={v} />
               </Grid.Col>
             );
           })}

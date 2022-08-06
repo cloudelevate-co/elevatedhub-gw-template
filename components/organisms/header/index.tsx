@@ -83,7 +83,9 @@ export function HeaderSearch({ links }: HeaderSearchProps) {
       <div className={classes.inner}>
         <Group>
           <Burger opened={opened} onClick={toggle} size="sm" />
-          <MantineLogo size={28} />
+          <Link href={"/"}>
+            <MantineLogo size={28} />
+          </Link>
         </Group>
 
         <Group>

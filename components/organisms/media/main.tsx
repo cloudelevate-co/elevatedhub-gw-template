@@ -1,8 +1,9 @@
 import { CacheProvider } from "@emotion/react";
 import { Box, Container, Grid, Stack, Title, Text, Group } from "@mantine/core";
+import { Post } from "../../../sdk/api";
 import { SermonCard } from "./card";
 
-export const OrgMediaMain = () => {
+export const OrgMediaMain = ({ posts }: { posts: Post[] }) => {
   return (
     <Box>
       <Container size="lg" my={"64px"}>
@@ -29,10 +30,10 @@ export const OrgMediaMain = () => {
           </Group>
         </Box>
         <Grid mt={"24px"} gutter="lg">
-          {[1, 2, 3, 4, 5, 6].map((v) => {
+          {(posts ?? []).map((v) => {
             return (
               <Grid.Col md={4}>
-                <SermonCard />
+                <SermonCard post={v} />
               </Grid.Col>
             );
           })}

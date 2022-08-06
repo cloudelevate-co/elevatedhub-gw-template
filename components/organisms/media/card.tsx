@@ -1,25 +1,25 @@
 import { Box, Button, Card, Stack, Title, Text, Image } from "@mantine/core";
+import { Post } from "../../../sdk/api";
 
-export const SermonCard = () => {
+export const SermonCard = ({ post }: { post: Post }) => {
   return (
     <Box>
       <Card shadow={"md"}>
         <Card.Section>
-          <Image src="https://i.ytimg.com/vi/73KWayeFHYM/maxresdefault.jpg" />
+          <Image src={post.image ?? "https://i.ytimg.com/vi/73KWayeFHYM/maxresdefault.jpg"} />
         </Card.Section>
 
         <Card.Section sx={{ padding: 18 }}>
           <Stack>
             <Box>
-              <Title sx={{ fontSize: 16 }}>Sermon title goes here</Title>
+              <Title sx={{ fontSize: 16 }}>{post.title}</Title>
               <Box>
                 {" "}
                 <small>{new Date().toDateString()}</small>
               </Box>
             </Box>
             <Text>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-              dolorem, consequuntur, eius nobis autem natus.
+              {post.short_description}
             </Text>
             <Box>
               <Button gradient={{ from: "blue", to: "orange" }}>View </Button>

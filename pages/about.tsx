@@ -4,8 +4,11 @@ import { FooterLinks } from "../components/organisms/footer";
 import { HeaderSearch } from "../components/organisms/header/index";
 import { EmailBanner } from "../components/organisms/subscribe/index";
 import { FooterIcons, HeaderLinks } from "../data/index";
+import { PublicApi, TOrgAboutData, TOrgBlogData } from "../sdk/api";
 
-export default function Screen() {
+export default function Screen({ data }) {
+
+  let about: TOrgAboutData = data.about;
   return (
     <div>
       <HeaderSearch links={HeaderLinks} />
@@ -41,7 +44,13 @@ export default function Screen() {
   );
 }
 
+
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  console.log(context.req.method,"resolved")
-  return {props:{}}
+  console.log(context.req.headers["host"], "resolved");
+  const url = context.req.headers["host"];
+
+  let api = new PublicApi()
+  let data = await api.siteControllerGetStoreAboutData(url)
+
+  return { props: { data: { url, about: data.data } } };
 }
