@@ -146,7 +146,22 @@ export function FooterLinks({ data }: FooterLinksProps) {
             Build fully functional accessible web applications faster than ever
           </Text>
         </div>
-        <div className={classes.groups}>{groups}</div>
+        <div className={classes.groups}>
+
+          {groups}
+          <div className={classes.wrapper}>
+            <Text className={classes.title}>{"Location"}</Text>
+            <Text sx={theme => {
+              return {
+                color:
+                  theme.colorScheme === "dark"
+                    ? theme.colors.dark[1]
+                    : theme.colors.gray[6],
+                fontSize: theme.fontSizes.sm,
+              }
+            }} >Lorem ipsum dolor sit. nesciunt voluptas illum dolorum, dolores.</Text>
+          </div>
+        </div>
       </Container>
       <Container className={classes.afterFooter} size="lg">
         <Text color="dimmed" size="sm">

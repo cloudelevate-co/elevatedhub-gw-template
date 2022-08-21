@@ -34,8 +34,7 @@ export const OrgBlogMain = ({ posts }: { posts?: Post[] }) => {
             <Box sx={{ textAlign: "center", maxWidth: 500 }}>
               <Title sx={{ color: "white" }}>Our Blog</Title>
               <Text color={"gray"} sx={{ color: "white" }}>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui
-                repellat sint molestiae magni ullam doloremque totam itaque.
+              WCCRM Jos Media Repository is an online media repository offering a wide range of resources related to the WCCRM Jos Org and its audience.
               </Text>
             </Box>
           </Group>

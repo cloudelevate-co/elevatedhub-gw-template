@@ -1,63 +1,38 @@
 export const FooterIcons = [
   {
-    title: "About",
+    title: "Pages",
     links: [
       {
-        label: "Features",
-        link: "#",
+        label: "About",
+        link: "/about",
       },
       {
-        label: "Pricing",
-        link: "#",
+        label: "Sermons",
+        link: "/sermons",
       },
       {
-        label: "Support",
-        link: "#",
+        label: "Articles",
+        link: "/articles",
       },
       {
-        label: "Forums",
-        link: "#",
+        label: "Contact",
+        link: "/contact",
       },
     ],
   },
   {
-    title: "Project",
+    title: "Media",
     links: [
       {
-        label: "Contribute",
+        label: "Youtube",
         link: "#",
       },
       {
-        label: "Media assets",
+        label: "Facebook",
         link: "#",
       },
       {
-        label: "Changelog",
-        link: "#",
-      },
-      {
-        label: "Releases",
-        link: "#",
-      },
-    ],
-  },
-  {
-    title: "Community",
-    links: [
-      {
-        label: "Join Discord",
-        link: "#",
-      },
-      {
-        label: "Follow on Twitter",
-        link: "#",
-      },
-      {
-        label: "Email newsletter",
-        link: "#",
-      },
-      {
-        label: "GitHub discussions",
+        label: "Instagram",
         link: "#",
       },
     ],
@@ -75,7 +50,7 @@ export const HeaderLinks = [
   },
   {
     link: "/blog",
-    label: "Blog",
+    label: "Articles",
   },
   {
     link: "/community",
