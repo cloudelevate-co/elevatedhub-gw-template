@@ -18,15 +18,12 @@ export const OrgBlog = ({ posts }: { posts?: Post[] }) => {
   return (
     <Box>
       <Container size="lg" my={"64px"}>
-        <Group position="center">
-          <Box sx={{ textAlign: "center", maxWidth: 500 }}>
-            <Title>Our Blog</Title>
-            <Text color={"gray"}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui
-              repellat sint molestiae magni ullam doloremque totam itaque.
-            </Text>
-          </Box>
-        </Group>
+        <Box sx={{ maxWidth: 600 }}>
+          <Title>Our Articles</Title>
+          <Text color={"gray"}>
+            Browse our collection of articles and videos that help you get the most out of your online presence.
+          </Text>
+        </Box>
         <Grid mt={"24px"} gutter="lg">
           {posts.map((v) => {
             return (

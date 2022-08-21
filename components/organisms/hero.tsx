@@ -2,12 +2,12 @@ import { createStyles, Container, Title, Text, Button } from "@mantine/core";
 
 const useStyles = createStyles((theme) => ({
   root: {
-    backgroundColor: "#11284b",
+    backgroundColor: "black",
     backgroundSize: "cover",
-    textAlign: "center",
     backgroundPosition: "center",
+
     backgroundImage:
-      "linear-gradient(250deg, rgba(130, 201, 30, 0) 0%, #062343 70%), url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80)",
+      "linear-gradient(250deg, rgba(130, 201, 30, 0) 0%, #062343 70%), url(https://www.consafelogistics.com/wp-content/uploads/2017/01/0506602r.jpg)",
     paddingTop: theme.spacing.xl * 3,
     paddingBottom: theme.spacing.xl * 3,
   },
@@ -78,26 +78,24 @@ export function HeroImageRight() {
   const { classes } = useStyles();
   return (
     <div className={classes.root}>
-      <Container size="md">
+      <Container size="lg">
         <div className={classes.inner}>
-          <div className={classes.content}>
+          <div className={classes.content} style={{ maxWidth: 700, }}>
             <Title className={classes.title}>
-              A{" "}
+
               <Text
                 component="span"
                 inherit
                 variant="gradient"
                 gradient={{ from: "pink", to: "yellow" }}
               >
-                fully featured
+                WCCRM Jos
               </Text>{" "}
-              React components library
+              Online Media repository
             </Title>
 
             <Text className={classes.description} mt={30}>
-              Build fully functional accessible web applications with ease –
-              Mantine includes more than 100 customizable components and hooks
-              to cover you in any situation
+              WCCRM Jos Media Repository is an online media repository offering a wide range of resources related to the WCCRM Jos Org and its audience.
             </Text>
 
             <Button
