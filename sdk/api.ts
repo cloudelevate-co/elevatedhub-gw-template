@@ -35,6 +35,12 @@ export interface MediaAttachment {
     'status': string;
     /**
      * 
+     * @type {number}
+     * @memberof MediaAttachment
+     */
+    'size': number;
+    /**
+     * 
      * @type {string}
      * @memberof MediaAttachment
      */
@@ -75,7 +81,13 @@ export interface Organization {
      * @type {string}
      * @memberof Organization
      */
-    'id': string;
+    'status': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Organization
+     */
+    'business_email': string;
     /**
      * 
      * @type {string}
@@ -87,13 +99,7 @@ export interface Organization {
      * @type {string}
      * @memberof Organization
      */
-    'handle': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Organization
-     */
-    'preferred_domain': string;
+    'bio': string;
     /**
      * 
      * @type {string}
@@ -106,6 +112,18 @@ export interface Organization {
      * @memberof Organization
      */
     'vision_statement': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Organization
+     */
+    'preferred_domain': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Organization
+     */
+    'custom_domain': string;
     /**
      * 
      * @type {string}
@@ -153,6 +171,12 @@ export interface Organization {
      * @type {string}
      * @memberof Organization
      */
+    'logo': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Organization
+     */
     'cover': string;
     /**
      * 
@@ -172,6 +196,78 @@ export interface Organization {
      * @memberof Organization
      */
     'address': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Organization
+     */
+    'google_analytics_code': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Organization
+     */
+    'fb_pixels_code': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Organization
+     */
+    'adsense_code': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Organization
+     */
+    'fb_live_url': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Organization
+     */
+    'youtube_live_url': string;
+    /**
+     * 
+     * @type {object}
+     * @memberof Organization
+     */
+    'paystack_int': object;
+    /**
+     * 
+     * @type {string}
+     * @memberof Organization
+     */
+    'subscription_plan': string;
+    /**
+     * 
+     * @type {number}
+     * @memberof Organization
+     */
+    'subscription_fee': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof Organization
+     */
+    'subscription_status': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Organization
+     */
+    'subscription_code': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Organization
+     */
+    'subscription_interval': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Organization
+     */
+    'subscription_activated_on': string;
 }
 /**
  * 
@@ -179,6 +275,12 @@ export interface Organization {
  * @interface Post
  */
 export interface Post {
+    /**
+     * 
+     * @type {string}
+     * @memberof Post
+     */
+    'org_id': string;
     /**
      * 
      * @type {string}
@@ -332,7 +434,7 @@ export interface TOrgMediaData {
      * @type {Array<Post>}
      * @memberof TOrgMediaData
      */
-    'sermons': Array<Post>;
+    'media': Array<Post>;
     /**
      * 
      * @type {Array<Taxonomy>}
@@ -376,25 +478,19 @@ export interface Taxonomy {
      * @type {string}
      * @memberof Taxonomy
      */
-    'id': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Taxonomy
-     */
     'type': string;
     /**
      * 
      * @type {string}
      * @memberof Taxonomy
      */
-    'name': string;
+    'context': string;
     /**
      * 
      * @type {string}
      * @memberof Taxonomy
      */
-    'handle': string;
+    'name': string;
     /**
      * 
      * @type {string}
@@ -413,18 +509,6 @@ export interface Taxonomy {
      * @memberof Taxonomy
      */
     'image': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Taxonomy
-     */
-    'as': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Taxonomy
-     */
-    'for': string;
 }
 
 /**

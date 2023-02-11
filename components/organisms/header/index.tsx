@@ -7,8 +7,6 @@ import {
   Box,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { IconSearch } from "@tabler/icons";
-import { MantineLogo } from "@mantine/ds";
 import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
@@ -84,7 +82,7 @@ export function HeaderSearch({ links }: HeaderSearchProps) {
         <Group>
           <Burger opened={opened} onClick={toggle} size="sm" />
           <Link href={"/"}>
-            <MantineLogo size={28} />
+            <h3>Logo</h3>
           </Link>
         </Group>
 

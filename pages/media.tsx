@@ -1,7 +1,5 @@
 import { Button, Container, Pagination, Stack } from "@mantine/core";
 import { GetServerSideProps } from "next";
-import { OrgBlog } from "../components/organisms/blog/index";
-import { OrgBlogMain } from "../components/organisms/blog/main";
 import { FooterLinks } from "../components/organisms/footer";
 import { HeaderSearch } from "../components/organisms/header/index";
 import { OrgMediaMain } from "../components/organisms/media/main";
@@ -10,13 +8,12 @@ import { FooterIcons, HeaderLinks, LiveEventData } from "../data/index";
 import { PublicApi, TOrgMediaData } from "../sdk/api";
 
 export default function Screen({ data }) {
-
   let media: TOrgMediaData = data.media??{};
   return (
     <div>
       <HeaderSearch links={HeaderLinks} />
       <Stack spacing={"lg"} justify="stretch"></Stack>
-      <OrgMediaMain posts={media.sermons} />
+      <OrgMediaMain posts={media.media} />
       <Pagination
         mb={60}
         total={10}
@@ -38,8 +35,8 @@ export default function Screen({ data }) {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   console.log(context.req.headers["host"], "resolved");
-  const url = context.req.headers["host"];
-
+  let url = context.req.headers["host"];
+ 
   let api = new PublicApi()
   let data = await api.siteControllerGetStoreMediaData(url)
 

@@ -6,7 +6,6 @@ import {
   ThemeIcon,
   MantineProvider,
 } from "@mantine/core";
-import { IconPlus } from "@tabler/icons";
 
 const useStyles = createStyles((theme, _params, getRef) => {
   const icon = getRef("control");
@@ -102,11 +101,11 @@ export function FaqWithBg() {
           chevronSize={50}
           variant="separated"
           disableChevronRotation
-          chevron={
-            <ThemeIcon radius="xl" className={classes.gradient} size={32}>
-              <IconPlus size={18} stroke={1.5} />
-            </ThemeIcon>
-          }
+          // chevron={
+          //   <ThemeIcon radius="xl" className={classes.gradient} size={32}>
+          //     <IconPlus size={18} stroke={1.5} />
+          //   </ThemeIcon>
+          // }
         >
           <Accordion.Item className={classes.item} value="reset-password">
             <Accordion.Control>How can I reset my password?</Accordion.Control>

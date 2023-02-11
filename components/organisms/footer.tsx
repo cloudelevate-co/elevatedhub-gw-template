@@ -5,7 +5,6 @@ import {
   ActionIcon,
   Group,
 } from "@mantine/core";
-import { MantineLogo } from "@mantine/ds";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -141,7 +140,7 @@ export function FooterLinks({ data }: FooterLinksProps) {
     <footer className={classes.footer}>
       <Container className={classes.inner} size="lg">
         <div className={classes.logo}>
-          <MantineLogo size={30} />
+          <h4>LOGO</h4>
           <Text size="xs" color="dimmed" className={classes.description}>
             Build fully functional accessible web applications faster than ever
           </Text>

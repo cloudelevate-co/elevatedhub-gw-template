@@ -7,8 +7,8 @@ export const FooterIcons = [
         link: "/about",
       },
       {
-        label: "Sermons",
-        link: "/sermons",
+        label: "Media",
+        link: "/media",
       },
       {
         label: "Articles",
